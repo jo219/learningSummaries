@@ -1,0 +1,25 @@
+vim summary
+
+k - up
+j - down
+h - left
+l - right 
+
+
+w - word
+b - prev word
+
+0 - line begin
+$ - line end
+
+^ - line begin after whitespaces
+
+gg  - line #1
+#gg - line #
+G   - line last
+
+[ - up blocks
+] - down blocks
+
+
+i/esc - command mode in/out

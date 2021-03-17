@@ -1,0 +1,44 @@
+install 
+from nodejs.org
+
+app.js
+console.log("Hello world")
+const getUserInfo = require('./sayInfo');  getUserInfo.sayName();  // for exports section
+
+
+The NodeJS Backbones
+function(exports, require, module, __filename, __dirname) { }
+
+[Exports]  sayInfo.js
+const sayName = () => { console.log("I am Baru") }
+module.exports.sayName = sayName;
+
+[Path]  path.js
+const path = require('path');
+const fileLocation = path.join(__dirname, 'app.js');
+const fileName = path.basename(fileLocation);  // also try .extname, etc.
+
+[URL] url.js
+const path = require('url');
+const address = 'http://localhost:8080/default.html?year=2021&month=February'
+const parsedUrl = url.parse(address, true)
+console.log(parsedUrl.host); // also try .pathname, .query.month, etc.
+
+[FS]  fs.js
+const path = require('fs');
+fs.writeFile(message.txt, "Hello there", err => {
+    if(err) throw err;
+    console.log('file has been written');
+});
+fs.readFile('./message.txt', 'utf8', (err, data) => {
+    if(err) throw err;
+    console.log(data)
+});
+
+[HTTP]  http.js 
+const http = require('http');
+const server = http.createServer((req, res) => {
+    if(req.url === '/'){
+        req.write('Welco')
+    }
+}

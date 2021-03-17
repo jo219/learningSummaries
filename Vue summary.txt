@@ -1,0 +1,58 @@
+vue summary
+
+Basics
+
+<div id='app'>
+	<p>{{ message }}</p>
+	<input v-model='message'>
+</div>
+
+v-bind: [ property ] = 'message'
+v-if  = 'message' (bool)
+v-for = 'todo in todos'
+v-on: [ event ] = 'reverse' (function)
+v-model = 'message' (bind input to state)
+
+<div id="app-7">
+  <ol>
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id"
+    ></todo-item>
+  </ol>
+</div>
+
+// params: #1:tag-name , #2: 
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!',
+    state: true,
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+  methods:  {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+  }
+})
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { id: 0, text: 'Vegetables' },
+      { id: 1, text: 'Cheese' },
+      { id: 2, text: 'Whatever else humans are supposed to eat' }
+    ]
+  }
+})

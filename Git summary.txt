@@ -1,0 +1,55 @@
+git summary
+
+git config --global user.name "nagasesa9"
+git config --global user.email "jonathansen9@gmail.com"
+
+git config --global color.ui auto
+
+
+git init .
+
+# to staging area ("git status" for check)
+git add <file name>
+git rm --cached <file name>
+
+# to only current dir downwards
+git add .
+git rm -r --cached . 
+
+
+# get to commit area
+git commit -m "init"
+
+git log
+git show <HASH>
+git diff
+git restore # cancel what on diff
+
+# change message of last commit
+git commit --amend --m  "add something"
+
+git branch  		# to show (local)
+git branch -M main  # change name
+git branch -r 		# list remote only
+		   -a 		# list all
+
+git branch   <New Branch Name>
+git checkout <New Branch Name>
+git checkout - b <New Branch Name>  # 2 steps
+git checkout -						# to previous branch
+git branch -d <Branch To Delete>
+
+# add SSH key
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+nano ~/.ssh/config
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+ssh-add -K ~/.ssh/id_ed25519
+# cat  ~/.ssh/id_ed25519,pub
+pbcopy < ~/.ssh/id_ed25519.pub
+
+git pull
