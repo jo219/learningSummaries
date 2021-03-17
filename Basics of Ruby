@@ -1,0 +1,94 @@
+Basics of Ruby
+
+# comment
+=start
+	comment
+=end
+
+Variables
+(leters | _) (leters | _ | numbers)
+
+var = ["Mike", 40, 3.4, true]
+var[2].to_i/f/s
+
+puts "Your name is #{var[0]}" + ", and you can call me " + var[0]
+
+var[2, 3] # from 2, take 3 elements
+var[2..4]
+
+var[-1]
+var.pop, .reverse , .sort, .include? "Mike" (return true/false)
+
+
+Operators
++ - * / % **  # order applies
+.abs(), .round(), 
+Math.sqrt(var[1])
+Math.log(var[1])
+
+a = gets.chomp (like scanf())
+
+
+Methods
+def name_a(a, b=0)
+	;
+end
+
+if
+elsif
+end
+
+case a
+	when "a"
+		;
+	when "b"
+		;
+	else
+		;
+end
+
+while i<3
+	;
+end
+
+for i in 0..5  # 5.times do |i|    
+# for i in var # var.each do |i|
+	puts i
+end
+
+begin
+	;
+rescue
+	;
+
+Dictionary
+a = {"dad" => "tony", :mom => "sarah", ...}
+puts a["dad"]
+puts a[:mom]
+
+Class 
+class Book < ParentBook  # inheritance
+	attr_accessor :title, :author
+	
+	# def initialize(title, author)
+	#	@title = title
+	#end
+
+	def title=(title)
+		puts "Set"
+		@title = title
+	end
+	def title
+		puts "Get"
+		return @title
+	end
+	
+	def readBook()
+		puts "Reading #{self.title}"
+	end
+end
+
+book1 = Book.new()
+book1.title = "The Book"
+book1.readBook()
+
