@@ -10,7 +10,7 @@ git init .
 
 # to staging area ("git status" for check)
 git add <file name>
-git rm --cached <file name>
+git rm --cached <file name>  # to unstage
 
 # to only current dir downwards
 git add .
@@ -39,6 +39,22 @@ git checkout - b <New Branch Name>  # 2 steps
 git checkout -						# to previous branch
 git branch -d <Branch To Delete>
 
+
+# the workflow
+
+git clone <git-url>
+
+git remote add <repo-name> <git-url>
+git pull	
+
+# don't forget to check conflicts
+git add .
+git rebase --continue  # or --skip
+
+git push -f
+
+
+
 # add SSH key
 ssh-keygen -t ed25519 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
@@ -51,5 +67,3 @@ Host *
 ssh-add -K ~/.ssh/id_ed25519
 # cat  ~/.ssh/id_ed25519,pub
 pbcopy < ~/.ssh/id_ed25519.pub
-
-git pull
