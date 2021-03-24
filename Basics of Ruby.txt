@@ -92,3 +92,8 @@ book1 = Book.new()
 book1.title = "The Book"
 book1.readBook()
 
+
+Regex:
+test = 'dasda dsa ds sd'
+p test = /<regex-pattern>/
+p test.to_enum(:scan, /\d+/).map( Regexp.last_match )
